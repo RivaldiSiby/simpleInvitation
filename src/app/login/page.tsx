@@ -31,7 +31,7 @@ export default function Login() {
   };
   return (
     <main className="bg-purple-500 w-full h-[100vh] flex justify-center items-center">
-      <section className="w-[50%] h-[27.5%] bg-white rounded-sm shadow flex items-center">
+      <section className="sm:w-[50%] sm:h-[27.5%] w-[90%] bg-white rounded-sm shadow flex items-center">
         <section className="w-full">
           <h1 className="text-purple-500 text-center text-xl font-bold uppercase m-5">
             Login Page

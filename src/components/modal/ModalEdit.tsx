@@ -13,8 +13,8 @@ export default function ModalEdit({
 }) {
   return (
     <div className="absolute z-20 bg-black bg-opacity-50 h-[100vh] w-full top-0 flex justify-center pt-10">
-      <section className="bg-white w-[70%] h-[200px]">
-        <div className="flex flex-col justify-center w-full px-10">
+      <section className="bg-white sm:w-[70%] w-[90%] h-[200px]">
+        <div className="flex flex-col justify-center w-full px-5 sm:px-10">
           <h1 className="text-gray-500 m-3 font-bold text-center mt-5">
             Edits Tamu Undangan
           </h1>
