@@ -1,6 +1,7 @@
 "use client";
 import ModalAdd from "@/components/modal/ModalAdd";
 import ModalEdit from "@/components/modal/ModalEdit";
+import { logOut } from "@/config/firebase/auth";
 import { app } from "@/config/firebase/config";
 import {
   addVisitor,
@@ -25,7 +26,7 @@ export default function Das() {
     if (!user) {
       router.push("/");
     }
-  });
+  }, []);
 
   const getDocs = async () => {
     try {
@@ -63,6 +64,15 @@ export default function Das() {
       })
       .catch((err) => console.log(err));
   };
+
+  const logoutHandler = () => {
+    console.log("Login click");
+
+    logOut()
+      .then((res) => router.push("/login"))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <main className="bg-white w-full h-[100vh] flex">
       {modal1 ? (
@@ -86,13 +96,22 @@ export default function Das() {
         ""
       )}
       <section className="flex-1 p-5 flex flex-col">
-        <button
-          onClick={() => setModal1(true)}
-          className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-5 w-[30%]"
-          type="submit"
-        >
-          Tambah
-        </button>
+        <section className="w-full flex justify-between">
+          <button
+            onClick={() => setModal1(true)}
+            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-5 w-[30%]"
+            type="submit"
+          >
+            Tambah
+          </button>
+          <button
+            onClick={() => logoutHandler()}
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-5 w-[30%]"
+            type="submit"
+          >
+            Logout
+          </button>
+        </section>
         <h3 className="text-gray-600 text-center font-semibold mt-5 mb-2">
           {" "}
           List Tamu Undangan

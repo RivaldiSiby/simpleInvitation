@@ -1,5 +1,5 @@
 "use client";
-import { signIn } from "@/config/firebase/aut";
+import { signIn } from "@/config/firebase/auth";
 import { app } from "@/config/firebase/config";
 import { getAuth } from "firebase/auth";
 import { useRouter } from "next/navigation";
@@ -17,7 +17,7 @@ export default function Login() {
     if (user) {
       router.push("/das");
     }
-  });
+  }, []);
   const submit = () => {
     console.log("Login click");
     if (payload.email === "" || payload.password === "") {
