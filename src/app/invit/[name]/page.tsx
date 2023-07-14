@@ -23,9 +23,9 @@ export default async function Invit({ params }: { params: { name: string } }) {
       <main className=" h-[800px] w-full max-w-[600px] z-20 bg-black bg-opacity-50 flex items-center justify-center">
         <section>
           <Image
-            className="w-[200px] h-[200px] rounded-full mx-auto"
+            className="w-[200px] h-[200px] rounded-full mx-auto object-cover"
             alt="bg"
-            src={require("../../../assets/img/img2.jpeg")}
+            src={require("../../../assets/img/bg.jpeg")}
           />
           <h1 className=" text-yellow-100 font-extrabold font-sans text-[20px] text-center mt-5">
             Syukuran Wisuda
